@@ -1,0 +1,20 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/widgets
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /mnt/merged/media
+
+- search:
+    provider: google
+    focus: true
+    target: _self
+
+- datetime:
+    text_size: md
+    format:
+        dateStyle: long
+        timeStyle: short
+        hourCycle: h23

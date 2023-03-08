@@ -1,0 +1,25 @@
+---
+version: "2.1"
+services:
+  torrent:
+    image: ghcr.io/linuxserver/qbittorrent
+    container_name: torrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - WEBUI_PORT=8112
+    ports:
+      - 56881:56881
+      - 56881:56881/udp
+      - 8112:8112
+    volumes:
+      - ./config:/config
+      - /mnt:/mnt
+      - ./vuetorrent:/webui
+    restart: unless-stopped
+
+networks:
+  default:
+    name: multimedia
+    external: true

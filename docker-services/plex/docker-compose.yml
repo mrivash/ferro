@@ -1,0 +1,23 @@
+---
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:public
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - PLEX_CLAIM={{PLEX_CLAIM_TOKEN}}
+    ports:
+      - 32400:32400/tcp
+    volumes:
+      - ./config:/config
+      - ./transcode:/transcode
+      - /mnt:/mnt
+
+networks:
+  default:
+    name: multimedia
+    external: true

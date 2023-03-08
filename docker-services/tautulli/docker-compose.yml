@@ -1,0 +1,21 @@
+---
+version: '3'
+services:
+  tautulli:
+    image: tautulli/tautulli
+    container_name: tautulli
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+      - ./plex-logs:/plex_logs:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    ports:
+      - 8181:8181
+
+networks:
+  default:
+    name: multimedia
+    external: true

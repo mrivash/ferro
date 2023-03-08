@@ -1,0 +1,10 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/settings
+
+#providers:
+#  openweathermap: openweathermapapikey
+#  weatherapi: 5af1a0fc9ee6473d827231023230303
+
+favicon: https://cdn.icon-icons.com/icons2/224/PNG/512/Iron_Ingot_25704.png
+hideVersion: true

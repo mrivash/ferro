@@ -1,0 +1,21 @@
+---
+version: "2.1"
+services:
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - ./config:/config
+      - /mnt:/mnt
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+networks:
+  default:
+    name: multimedia
+    external: true

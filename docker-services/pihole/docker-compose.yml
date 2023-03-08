@@ -1,0 +1,21 @@
+---
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - {{LOCALHOST_IP}}:53:53/tcp
+      - {{LOCALHOST_IP}}:53:53/udp
+      - 8082:80/tcp
+    environment:
+      TZ: 'Europe/Madrid'
+      WEBPASSWORD: {{WEBUI_PASSWORD}}
+      PIHOLE_DNS: 1.1.1.1
+    volumes:
+      - ./etc-pihole/:/etc/pihole/
+      - ./etc-dnsmasq.d/:/etc/dnsmasq.d/
+    restart: unless-stopped
+    dns: 1.1.1.1
+

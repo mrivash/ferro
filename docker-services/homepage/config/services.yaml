@@ -1,0 +1,116 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/services
+
+- Media:
+    - QBittorrent:
+        icon: qbittorrent.png
+        href: http://torrent.ferro
+        description: Torrent downloads
+        container: torrent
+        widget:
+            type: qbittorrent
+            url: http://torrent.ferro
+            username: {{WEBUI_USER}}
+            password: {{WEBUI_PW}}
+    - Sonarr:
+        icon: sonarr.png
+        href: http://sonarr.ferro
+        description: Series management
+        container: sonarr
+        widget:
+            type: sonarr
+            url: http://sonarr.ferro
+            key: {{API_KEY}}
+            fields: ["wanted", "queued", "series"]
+    - Radarr:
+        icon: radarr.png
+        href: http://radarr.ferro
+        description: Movies management
+        container: radarr
+        widget:
+            type: radarr
+            url: http://radarr.ferro
+            key: {{API_KEY}}
+            fields: ["wanted", "queued", "movies"]
+    - Bazarr:
+        icon: bazarr.png
+        href: http://bazarr.ferro
+        description: Subtitles management
+        container: bazarr
+        widget:
+            type: bazarr
+            url: http://bazarr.ferro
+            key: {{API_KEY}}
+    - Prowlarr:
+        icon: prowlarr.png
+        href: http://prowlarr.ferro
+        description: Trackers & indexers
+        container: prowlarr
+        widget:
+            type: prowlarr
+            url: http://prowlarr.ferro
+            key: {{API_KEY}}
+
+- Library:
+    - Plex:
+        icon: plex-new.png
+        href: https://app.plex.tv/desktop/#!/
+        description: Media player
+        container: plex
+        widget:
+            type: plex
+            url: {{LOCALHOST_IP}}:32400
+            key: {{API_KEY}}
+    - Tautulli:
+        icon: tautulli.png
+        href: http://tautulli.ferro
+        description: Plex dashboard & statistics
+        container: tautulli
+        widget:
+            type: tautulli
+            url: http://tautulli.ferro
+            key: {{API_KEY}}
+    - Overseerr:
+        icon: overseerr.png
+        href: http://overseerr.ferro
+        description: Request management and media discovery
+        container: overseerr
+        widget:
+            type: overseerr
+            url: http://overseerr.ferro
+            key: {{API_KEY}}
+            fields: ["pending","available"]
+
+- Infra:
+    - Cockpit:
+        icon: cockpit.png
+        href: {{LOCALHOST_IP}}:9090
+        description: Server dashboard
+        ping: {{LOCALHOST_IP}}
+    - Pihole:
+        icon: pihole.png
+        href: http://pihole.ferro/admin
+        description: Ad blocking & DNS
+        container: pihole
+        widget:
+            type: pihole
+            url: http://pihole.ferro
+            key: {{API_KEY}}
+            fields: ["queries", "blocked"]
+    - Nginx:
+        icon: nginxproxymanager.png
+        href: http://nginx.ferro/
+        description: Nginx reverse proxy manager
+        container: nginx
+        widget:
+            type: npm
+            url: http://nginx.ferro
+            username: {{WEBUI_MAIL}}
+            password: {{WEBUI_PW}}
+    - Wireguard:
+        icon: wireguard.png
+        href: http://wireguard.ferro
+        description: VPN management
+        container: wireguard
+

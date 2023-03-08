@@ -1,0 +1,21 @@
+---
+version: "2.1"
+
+services:
+  overseerr:
+    image: ghcr.io/linuxserver/overseerr
+    container_name: overseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    ports:
+      - 5055:5055
+    volumes:
+      - ./config:/config
+    restart: unless-stopped
+
+networks:
+  default:
+    name: multimedia
+    external: true

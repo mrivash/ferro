@@ -1,0 +1,48 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Social:
+    - Gmail:
+        - icon: gmail.png
+          href: https://gmail.com
+    - Twitter:
+        - icon: twitter.png
+          href: https://twitter.com
+    - LinkedIn:
+        - icon: linkedin.png
+          href: https://linkedin.com
+
+- News:
+    - La Voz de Galicia:
+        - icon: /icons/lvdg2.png
+          href: https://lavozdegalicia.es/
+    - El Pais:
+        - icon: /icons/elpais.png
+          href: https://elpais.com
+    - Marca:
+        - icon: /icons/marca2.png
+          href: https://marca.com
+
+
+- Entertainment:
+    - YouTube:
+        - icon: youtube-play.png
+          href: https://youtube.com/
+    - Twitch:
+        - icon: twitch.png
+          href: https://twitch.tv
+    - Reddit:
+        - icon: reddit.png
+          href: https://reddit.com/
+
+- Dev:
+    - Github:
+        - icon: github.png
+          href: https://github.com/
+    - Cloudflare:
+        - icon: cloudflare.png
+          href: https://dash.cloudflare.com/
+    - Amazon:
+        - icon: amazon.png
+          href: https://amazon.es

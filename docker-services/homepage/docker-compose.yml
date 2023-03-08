@@ -1,0 +1,19 @@
+---
+version: "3.3"
+
+services:
+  homepage:
+    image: ghcr.io/benphelps/homepage:latest
+    container_name: homepage
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - ./config:/app/config
+      - /mnt/merged/media:/mnt/merged/media
+      - ./custom-icons:/app/public/icons
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 3000:3000
+    dns:
+      - {{LOCALHOST_IP}}  
+    restart: unless-stopped
